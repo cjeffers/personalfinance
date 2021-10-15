@@ -75,8 +75,6 @@ def load_quicken_transactions(folder):
     ]
     trans_sum = sum([float(t['amount']) for t in transactions])
     print(f"quicken: {len(df)} trans, {trans_sum} total")
-    print('+', sum([float(t['amount']) for t in transactions if float(t['amount']) > 0]))
-    print('-', sum([float(t['amount']) for t in transactions if float(t['amount']) < 0]))
     return build_lookup_from_transactions(transactions)
 
 
